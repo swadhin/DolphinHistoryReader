@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dolphin.browser.extension.history"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.dolphin.browser.permission.READ_HISTORY"/>
+    <uses-permission android:name="com.dolphin.browser.permission.ADDON_BAR_BADGE"/>
+    <uses-permission android:name="com.dolphin.browser.permission.ACCESS_WEB_PAGES" />
+    <uses-permission android:name="com.dolphin.browser.permission.MANAGE_DOWNLOADS" />
+	<uses-permission android:name="com.dolphin.browser.permission.MANAGE_TABS" />
+	<uses-permission android:name="com.dolphin.browser.permission.READ_BOOKMARKS" />
+	<uses-permission android:name="com.dolphin.browser.permission.WRITE_BOOKMARKS" />
+	<uses-permission android:name="com.dolphin.browser.permission.WRITE_HISTORY" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <service android:name=".MyAddonService">
+            <intent-filter>
+                <action android:name="com.dolphin.browser.action.addonservice" />
+            </intent-filter>
+            <meta-data
+                android:name="dolphin_api_key"
+                android:value="PFUlB5m9EEGs+lNEsnAJPyeHdDaIUwiUn0X33unsalHGn/7xvuzZFulq4yT2rjTerQZ7mEkoP9EU/fLNvX913ZCUf52BeTn0YSx5nlx7HLqS26+Vw9gBcPGfCTJ9GCCMQI5jb13CXPtv2qmoDm4nY78noR4WweTvWPy6cm6IHew=" />
+        </service>
+    </application>
+
+</manifest>
